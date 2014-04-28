@@ -8,6 +8,9 @@
  */
 
 
+//TODO: add conditional and set variables so each sedtion is opt IN
+//      also create secondary and teteriary name space blocks warped in conditional
+
 /**
  * Main Copy Scope 
  */
@@ -17,6 +20,16 @@
  * Font-face & Icon Fonts
  */
 //@include font-face();
+
+
+.h1--structure { font-size: map-get($typography--structure, h1); }
+.h2--structure { font-size: map-get($typography--structure, h2); }
+.h3--structure { font-size: map-get($typography--structure, h3); }
+.h4--structure { font-size: map-get($typography--structure, h4); }
+.h5--structure { font-size: map-get($typography--structure, h5); }
+.h6--structure { font-size: map-get($typography--structure, h6); }
+.lead--structure { font-size: map-get($typography--structure, lead); }
+.meta--structure { font-size: map-get($typography--structute, meta); }
 
 /**
  * Headers 

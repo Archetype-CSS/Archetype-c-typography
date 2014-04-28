@@ -1,33 +1,10 @@
 /*** @export "typography-pallet" css */
 /**
- * Typography Pallet
+ * Typography Settings
  *
  * 1. Text selection highlight color
  * 2. Text selection text color
  */
-
-
-/**
- * Typography Variables
- * 
- * 1. typography styles and variables are scoped. see comment in modules/core/_typography.scss
- * 2. path to web font or icon font used in font-face mixin
- */
-
-/** 
- * Type Scope Namespace: 
- */
-$main-type-scope:                     copy;         /* 1 */
-// $file-path:;                       path_to_font  /* 2 */
-
-/**
- * Font Stack Variables
- */
-$georgia:       Georgia, Cambria, "Times New Roman", Times, serif !default;
-$helvetica:     "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$lucida-grande: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif !default;
-$verdana:       Verdana, Geneva, sans-serif !default;
-$monospace:     "Bitstream Vera Sans Mono", Consolas, Courier, monospace, serif !default;
 
 /**
  * Modular Scale
@@ -60,17 +37,27 @@ $monospace:     "Bitstream Vera Sans Mono", Consolas, Courier, monospace, serif 
  *
  * 1. Default to $base-font-size 
  */
-
 @import "modular-scale";
 
 $base-size: 16px;                                     /* 1 */
 $ratio: fourth();
 
 
-$selection--color-bg:                 #fe57a1;        /* 1 */
-$tap--color-bg:                       black(75);
-$selection--color-txt:                $white;         /* 2 */
+// create a map for ms settings??
+$ms_settings: (
+  // ??
+);
 
+/**
+ * Typography Variables
+ * 
+ * 1. typography styles and variables are scoped. see comment in modules/core/_typography.scss
+ * 2. path to web font or icon font used in font-face mixin
+ */
+
+/** 
+ * Type Scope Namespace: 
+ */
 
 /**
  * Main Type Scope
@@ -78,94 +65,74 @@ $selection--color-txt:                $white;         /* 2 */
  * Abstracting typographic element variables to allow for easily adding additional type scopes if needed.
  * Add the additional typography scope styles and variables next to the main type scope styles and variables.
  */
+$main-type-scope:                     copy;         /* 1 */
+// $file-path:;                       path_to_font  /* 2 */
 
-$copy--body-font:                     $georgia;
-
-/**
- * Headers
- */
 
 /**
- * Header Text
+ * Typography Structure
+ *
+ * 1. every third meta line will line up with every seoncond baseline
+ * 2. every third meta line will line up with every seoncond baseline
  */
-$copy--header-color-txt:              black(40);
-$copy--header-txt:                    $helvetica;
+$typography--structure: (
+  fontSize: (
+    h1: ms(5),
+    h2: ms(4),
+    h3: ms(3),
+    h4: ms(2),
+    h5: ms(1),
+    h5: ms(0),
+    lead: ms(2),
+    meta: ms(-1),
+    footnote: ms(-2),
+    subheader: ms(3),  // one larger than the paragraph lead size on the ms scale
+    small: ms(-1),    // .80 or about 13px        
+    sub-sup: ms(-2)  // .75 or about 12px
+  ),
+  lineHeight: (
+    meta: 2/3,  // 1
+    footnote: 2/3   // 2
+  )
+);
+
 
 /**
- * Header Sizes
+ * Typography Skin
+ *
  */
-$copy--h1-size:                       ms(5); 
-$copy--h2-size:                       ms(4); 
-$copy--h3-size:                       ms(3); 
-$copy--h4-size:                       ms(2); 
-$copy--h5-size:                       ms(1); 
-$copy--h6-size:                       ms(0);
-
-/**
- * Hero Unity
- */
-// hero unit color
-// $hero-text-color:;
-
-/**
- * Sub Header 
- */
-$copy--subheader-color-txt:           $subtle-color--txt;
-$copy--subheader-size:                ms(3);  // one larger than the paragraph lead size on the ms scale
-
-/**
- * Main Body Text
- */
-$copy--body-color-bg:                 $white !default;
-$copy--body-color-txt:                black(30) !default;
-$copy--accent-color-txt:              $accent-color--txt;
-$copy--body-txt:                      $georgia;
-$copy--accent-txt:                    $helvetica;
-
-/**
- * Paragraph Lead
- */
-$copy--lead-color-txt:                $subtle-color--txt;
-$copy--lead-size:                     ms(2);
-
-/**
- * Meta Text 
- */
-$copy--meta-size:                     ms(-1);
-$copy--meta-line-height:              2/3;  // every third meta line will line up with every seoncond baseline
-
-/**
- * Footnote
- */
-$copy--footnote-size:                 ms(-2);
-$copy--footnote-line-height:          2/3; // every third meta line will line up with every seoncond baseline
-
-/**
- * Small Element
- */
-$copy--small-size:                    ms(-1);    // .80 or about 13px        
-$copy--sub-sup-size:                  ms(-2);  // .75 or about 12px
-
-/**
- * Horizontal Rule
- */
-$copy--hr-width:                      1px;
-$copy--hr-color:                      black(80);
-
-/**
- * Del
- */
-$copy--deleted-color:                 $subtle-color--txt;
-
-/**
- * Ins
- */
-$copy--ins-color-bg:                  #ff9;
-$copy--ins-color-txt:                 $black;
-
-/**
- * Mark
- */
-$copy--mark-color-bg:                 yellow;
-$copy--mark-color-txt:                $white;
+$typography--skin: (
+  fontStack: (
+    georgia:        (Georgia, Cambria, "Times New Roman", Times, serif !default),
+    helvetica:     ("Helvetica Neue", Helvetica, Arial, sans-serif !default),
+    lucida-grande: ("Lucida Grande", Tahoma, Verdana, Arial, sans-serif !default),
+    verdana:       (Verdana, Geneva, sans-serif !default),
+    monospace:     ("Bitstream Vera Sans Mono", Consolas, Courier, monospace, serif !default)
+  ),
+  txtColor: (
+    lead:                $subtle-color--txt,
+    hero:                 $subtl-color--txt,
+    subheader:           $subtle-color--txt,
+    accent:              $accent-color--txt,
+    body:                black(30) !default,
+    mark:                $white,
+    deleted:                 $subtle-color--txt,
+    ins:                 $black,
+    $selection:                $white,         /* 2 */
+    $header:              black(40)
+  ),
+  bgColor: (
+    ins:                  #ff9,
+    mark:                 yellow,
+    body:                 $white !default,
+    selection:                 #fe57a1,   /* 1 */
+    tap:                       black(75)
+  ),
+  font-family: (
+    heading:                   map-get($typography--skin, fontStack, georgia),
+    body:                      map-get($typography--skin, fontStack, verdana),
+    accent:                    map-get($typography--skin, fontStack, helvetica),
+    code:                      map-get($typography--skin, fontStack, monospace),
+  )
+);
 
