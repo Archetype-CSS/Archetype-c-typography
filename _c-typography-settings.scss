@@ -1,10 +1,11 @@
-/*** @export "typography-pallet" css */
 /**
  * Typography Settings
  *
  * 1. Text selection highlight color
  * 2. Text selection text color
  */
+
+@import '../../bower_components/u-colorkit/_u-colorkit';
 
 /**
  * Modular Scale
@@ -82,7 +83,7 @@ $typography--structure: (
     h3: ms(3),
     h4: ms(2),
     h5: ms(1),
-    h5: ms(0),
+    h6: ms(0),
     lead: ms(2),
     meta: ms(-1),
     footnote: ms(-2),
@@ -92,7 +93,8 @@ $typography--structure: (
   ),
   lineHeight: (
     meta: 2/3,  // 1
-    footnote: 2/3   // 2
+    footnote: 2/3,   // 2
+    base: 1
   )
 );
 
@@ -103,36 +105,34 @@ $typography--structure: (
  */
 $typography--skin: (
   fontStack: (
-    georgia:        (Georgia, Cambria, "Times New Roman", Times, serif !default),
-    helvetica:     ("Helvetica Neue", Helvetica, Arial, sans-serif !default),
-    lucida-grande: ("Lucida Grande", Tahoma, Verdana, Arial, sans-serif !default),
-    verdana:       (Verdana, Geneva, sans-serif !default),
-    monospace:     ("Bitstream Vera Sans Mono", Consolas, Courier, monospace, serif !default)
+    georgia:        "Georgia, Cambria, 'Times New Roman', Times, serif !default",
+    helvetica:      "'Helvetica Neue', Helvetica, Arial, sans-serif !default",
+    lucida-grande:  "'Lucida Grande', Tahoma, Verdana, Arial, sans-serif !default",
+    verdana:        "Verdana, Geneva, sans-serif !default",
+    monospace:      "'Bitstream Vera Sans Mono', Consolas, Courier, monospace, serif !default"
   ),
   txtColor: (
-    lead:                $subtle-color--txt,
-    hero:                 $subtl-color--txt,
-    subheader:           $subtle-color--txt,
-    accent:              $accent-color--txt,
-    body:                black(30) !default,
-    mark:                $white,
-    deleted:                 $subtle-color--txt,
-    ins:                 $black,
-    $selection:                $white,         /* 2 */
-    $header:              black(40)
+    //muted:  // these should be coming from colorkit...colorkit = dependency of type.
+    //accent:
+    //subtle:
+    //strong:
+    lead:                _u-deepGet($colorPallet, baseColor, subtle),
+    hero:                _u-deepGet($colorPallet, baseColor, subtle),
+    subheader:           _u-deepGet($colorPallet, baseColor, subtle),
+    accent:              _u-deepGet($colorPallet, baseColor, subtle),
+    body:                black(30),
+    mark:                _u-deepGet($colorPallet, baseColor, white),
+    deleted:             _u-deepGet($colorPallet, baseColor, subtle),
+    ins:                 _u-deepGet($colorPallet, baseColor, subtle),
+    selection:           _u-deepGet($colorPallet, baseColor, white),
+    header:              black(40)
   ),
   bgColor: (
     ins:                  #ff9,
     mark:                 yellow,
-    body:                 $white !default,
-    selection:                 #fe57a1,   /* 1 */
-    tap:                       black(75)
-  ),
-  font-family: (
-    heading:                   map-get($typography--skin, fontStack, georgia),
-    body:                      map-get($typography--skin, fontStack, verdana),
-    accent:                    map-get($typography--skin, fontStack, helvetica),
-    code:                      map-get($typography--skin, fontStack, monospace),
+    body:                 _u-deepGet($colorPallet, baseColor, white),
+    selection:            #fe57a1,   /* 1 */
+    tap:                  black(75)
   )
 );
 

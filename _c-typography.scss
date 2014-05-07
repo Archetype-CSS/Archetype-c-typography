@@ -6,7 +6,9 @@
  * this is done to avoid repeatitive overrides
  * see: http://css-tricks.com/opt-in-typography/  
  */
-
+@import 'compass';
+@import '_c-typography-settings.scss';
+//@import 'bower_components/c-spacers/_c-spacers';
 
 //TODO: add conditional and set variables so each sedtion is opt IN
 //      also create secondary and teteriary name space blocks warped in conditional
@@ -16,69 +18,70 @@
  */
 .#{$main-type-scope} {
 
-/**
- * Font-face & Icon Fonts
- */
-//@include font-face();
+  /**
+   * Font-face & Icon Fonts
+   */
+  //@include font-face();
 
 
-.h1--structure { font-size: map-get($typography--structure, h1); }
-.h2--structure { font-size: map-get($typography--structure, h2); }
-.h3--structure { font-size: map-get($typography--structure, h3); }
-.h4--structure { font-size: map-get($typography--structure, h4); }
-.h5--structure { font-size: map-get($typography--structure, h5); }
-.h6--structure { font-size: map-get($typography--structure, h6); }
-.lead--structure { font-size: map-get($typography--structure, lead); }
-.meta--structure { font-size: map-get($typography--structute, meta); }
+  .h1--structure { font-size: _u-deepGet($typography--structure, h1); }
+  .h2--structure { font-size: _u-deepGet($typography--structure, h2); }
+  .h3--structure { font-size: _u-deepGet($typography--structure, h3); }
+  .h4--structure { font-size: _u-deepGet($typography--structure, h4); }
+  .h5--structure { font-size: _u-deepGet($typography--structure, h5); }
+  .h6--structure { font-size: _u-deepGet($typography--structure, h6); }
+  .lead--structure { font-size: _u-deepGet($typography--structure, lead); }
+  .meta--structure { font-size: _u-deepGet($typography--structure, meta); }
 
-/**
- * Headers 
- */
+  /**
+   * Headers
+   *
+   * 1. Fix the character spacing for headings
+   */
   h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
-    color: $copy--header-color-txt;                 
-    font-family: $copy--header-txt;
-    // Fix the character spacing for headings
-    text-rendering: optimizelegibility;  
+    color: _u-deepGet($typography--skin, txtColor, header);
+    font-family: _u-deepGet($typography--skin, font-family, header);
+    text-rendering: optimizelegibility;  /* 1 */
   }
 
   h1 {
-    @include adjust-font-size-to($copy--h1-size);
-    margin: 0 auto rhythm(1, $copy--h1-size);
+    @include adjust-font-size-to(_u-deepGet($typography--structure, fontSize, h1));
+    margin: 0 auto rhythm(1, _u-deepGet($typography--structure, fontSize, h1));
   }
 
   h2 {
-    @include adjust-font-size-to($copy--h2-size);
-    margin: 0 auto rhythm(1, $copy--h2-size);
+    @include adjust-font-size-to(_u-deepGet($typography--structure, fontSize, h2));
+    margin: 0 auto rhythm(1, _u-deepGet($typography--structure, fontSize, h2));
   }
 
   h3 {
-    @include adjust-font-size-to($copy--h3-size);
-    margin: 0 auto rhythm(1, $copy--h3-size);
+    @include adjust-font-size-to(_u-deepGet($typography--structure, fontSize, h3));
+    margin: 0 auto rhythm(1, _u-deepGet($typography--structure, fontSize, h3));
   }
 
   h4 {
-    @include adjust-font-size-to($copy--h4-size);
-    margin: 0 auto rhythm(1, $copy--h4-size);
+    @include adjust-font-size-to(_u-deepGet($typography--structure, fontSize, h4));
+    margin: 0 auto rhythm(1, _u-deepGet($typography--structure, fontSize, h4));
   }
 
   h5 {
-    @include adjust-font-size-to($copy--h5-size);
-    margin: 0 auto rhythm(1, $copy--h5-size);
+    @include adjust-font-size-to(_u-deepGet($typography--structure, fontSize, h5));
+    margin: 0 auto rhythm(1, _u-deepGet($typography--structure, fontSize, h5));
   }
 
   h6 {
-    @include adjust-font-size-to($copy--h6-size);
-    margin: 0 auto rhythm(1, $copy--h6-size);
+    @include adjust-font-size-to(_u-deepGet($typography--structure, fontSize, h6));
+    margin: 0 auto rhythm(1, _u-deepGet($typography--structure, fontSize, h6));
   }
 
   .subheader { 
-    color: $copy--subheader-color-txt; 
     font-weight: normal; 
+    color: _u-deepGet($typography--skin, txtColor, subheader); 
   }
 
   p {
-    //margin-bottom: $base-line-height;
+    //margin-bottom: _u-deepGet($typography--structure, lineHeight, base);
     //font-family: $body-text;                           ////////does this not inherit from above??
     margin: 0 auto rhythm(1);
   }
@@ -87,31 +90,32 @@
 // p+p { text-indent: 2em; margin-top: -1.5em; }
 
   .lead {  
-    @include adjust-font-size-to($copy--lead-size);
-    margin: 0 auto rhythm(1, $copy--lead-size);
-    color: $copy--lead-color-txt;
+    @include adjust-font-size-to(_u-deepGet($typography--structure, fontSize, lead));
+    margin: 0 auto rhythm(1, _u-deepGet($typography--structure, fontSize, lead));
+    color: _u-deepGet($typography--structure, txtColor, lead);
   }
 
   .meta {
-    @include adjust-font-size-to($copy--meta-size, $copy--meta-line-height);
+    //@include adjust-font-size-to(_u-deepGet($typography--structure, fontSize, meta), _u-deepGet($typography--structure, lineHeight, meta));
   }
 
   .footnote {
-    @include adjust-font-size-to($copy--footnote-size, $copy--footnote-line-height);
+    //@include adjust-font-size-to(_u-deepGet($typography--structure, fonSize, footnote), _u-deepGet($typography--structure, lineHeight, footnote));
   }
 
   .muted {
-    color: $muted-color--txt;
+    color: _u-deepGet($basePallet, baseColor, muted);
   }
 
   address {
     display: block;
-    margin-bottom: $base-line-height;
-    line-height: $base-line-height;
+    // TODO: fix this:
+    margin-bottom: 1em; //_u-deepGet($typography--structure, lineHeight, base); 
+    line-height: _u-deepGet($typography--structure, lineHeight, base);
     font-style: normal;
   }
   del {
-    color: $copy--deleted-color;
+    color: _u-deepGet($basePallet, baseColor, subtle);
     text-decoration: line-through;
   }
  
@@ -129,8 +133,8 @@
   }
 
   ins { 
-    background: $copy--ins-color-bg; 
-    color: $copy--ins-color-txt; 
+    background-color: _u-deepGet($basePallet, baseColor, subtle); 
+    color: _u-deepGet($basePallet, baseColor, subtle); 
     text-decoration: none; 
   }
 
