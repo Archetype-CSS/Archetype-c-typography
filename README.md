@@ -1,19 +1,23 @@
-# c-typography[![Build Status](https://secure.travis-ci.org/Archetype-CSS/c-typography.png?branch=master)](http://travis-ci.org/Archetype-CSS/c-typography) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+# c-typography[![Build Status](https://secure.travis-ci.org/Archetype-CSS/Archetype-c-typography.png?branch=master)](http://travis-ci.org/Archetype-CSS/Archetype-c-typography) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 Archetype typography component
 
 ## Installation
-  * [Bower](http://bower.io): {{coming soon}}
-  * Git: `git clone https://github.com/Archetype-CSS/c-typography.git`
+  * [Bower](http://bower.io): `bower install Archetype-c-typography`
+  * Git: `git clone https://github.com/Archetype-CSS/Archetype-c-typography.git`
 
 ## Use
-  * `test-title--structure` - structure styles for the test title
+Include the module in your `main.scss` file: `@import
+'Archetype-c-typography';`. Out of the box, Archetype-c-typography generates only basic type treatments. To
+customize, copy the `_c-typography.scss` partial into your components
+directory. The styles passed in this config will over-ride the default styles
+for the module.
 
 ## Run the Test Locally
 
 ```bash
-git clone https://github.com/Archetype-CSS/c-typography.git
-cd c-typography
+git clone https://github.com/Archetype-CSS/Archetype-c-typography.git
+cd Archetype-c-typography
 npm install
 grunt
 ```

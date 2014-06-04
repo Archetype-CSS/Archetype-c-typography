@@ -110,7 +110,7 @@
  *
  */
 /**
- * Red-Violets
+ * Reds
  * 
  */
 /**
@@ -344,6 +344,44 @@
  *
  */
 /**
+ * Color Pallet
+ * 
+ */
+/**
+ * Color Scheme
+ * 
+ * Generate harmonious color scheme based on a single key-color ($base-color)
+ * @include color-scheme($base-color, $color-relationship);
+ * $base-color: any CSS color value or keyword
+ * $color-relationship: monochromatic/complementary/spit-complementary/analogous/triadic/tetradic/quadradic
+ * $color-angle: (defaults to 30)
+ */
+/**
+ * Base Pallet
+ *
+ * use this pallet to easily derive color pallet variables from
+ */
+/**
+ * Color Pallet
+ */
+/**
+ * Brand Colors
+ *
+ * prefixed with '$brand-' to avoid proper color names for ease of use and to avoid collision with CSS color keywords
+ * ex: $brand-blue: deepskyblue; or: $brand-accent: tint($brand-blue, 12%);
+ */
+/**
+ * ex:
+ * $brand-blue:;
+ * $brand-primary:;
+ * $brand-secondary:;
+ * $brand-accent:;
+ */
+/**
+ * UI and State Colors
+ *
+ */
+/**
  * Typography Settings
  *
  * 1. Text selection highlight color
@@ -431,7 +469,7 @@
  *
  */
 /**
- * Red-Violets
+ * Reds
  * 
  */
 /**
@@ -625,6 +663,44 @@
  * Remember: the first value in the $tint-stack, $tone-stack, and $shade-stack
  * lists is the unadjusted color, meaning each stack includes the color which the
  * stack was derived from. The adjusted colors in the stack begin at 2.
+ */
+/**
+ * Color Pallet
+ * 
+ */
+/**
+ * Color Scheme
+ * 
+ * Generate harmonious color scheme based on a single key-color ($base-color)
+ * @include color-scheme($base-color, $color-relationship);
+ * $base-color: any CSS color value or keyword
+ * $color-relationship: monochromatic/complementary/spit-complementary/analogous/triadic/tetradic/quadradic
+ * $color-angle: (defaults to 30)
+ */
+/**
+ * Base Pallet
+ *
+ * use this pallet to easily derive color pallet variables from
+ */
+/**
+ * Color Pallet
+ */
+/**
+ * Brand Colors
+ *
+ * prefixed with '$brand-' to avoid proper color names for ease of use and to avoid collision with CSS color keywords
+ * ex: $brand-blue: deepskyblue; or: $brand-accent: tint($brand-blue, 12%);
+ */
+/**
+ * ex:
+ * $brand-blue:;
+ * $brand-primary:;
+ * $brand-secondary:;
+ * $brand-accent:;
+ */
+/**
+ * UI and State Colors
+ *
  */
 /**
  * Modular Scale
@@ -780,7 +856,7 @@
  *
  */
 /**
- * Red-Violets
+ * Reds
  * 
  */
 /**
@@ -976,6 +1052,44 @@
  * stack was derived from. The adjusted colors in the stack begin at 2.
  */
 /**
+ * Color Pallet
+ * 
+ */
+/**
+ * Color Scheme
+ * 
+ * Generate harmonious color scheme based on a single key-color ($base-color)
+ * @include color-scheme($base-color, $color-relationship);
+ * $base-color: any CSS color value or keyword
+ * $color-relationship: monochromatic/complementary/spit-complementary/analogous/triadic/tetradic/quadradic
+ * $color-angle: (defaults to 30)
+ */
+/**
+ * Base Pallet
+ *
+ * use this pallet to easily derive color pallet variables from
+ */
+/**
+ * Color Pallet
+ */
+/**
+ * Brand Colors
+ *
+ * prefixed with '$brand-' to avoid proper color names for ease of use and to avoid collision with CSS color keywords
+ * ex: $brand-blue: deepskyblue; or: $brand-accent: tint($brand-blue, 12%);
+ */
+/**
+ * ex:
+ * $brand-blue:;
+ * $brand-primary:;
+ * $brand-secondary:;
+ * $brand-accent:;
+ */
+/**
+ * UI and State Colors
+ *
+ */
+/**
  * Modular Scale
  * 
  * https://github.com/scottkellum/modular-scale
@@ -1051,7 +1165,7 @@
 /* line 41, ../../_c-typography.scss */
 .copy h1, .copy h2, .copy h3, .copy h4, .copy h5, .copy h6 {
   font-weight: bold;
-  color: #666666;
+  color: red;
   text-rendering: optimizelegibility;
   /* 1 */
 }

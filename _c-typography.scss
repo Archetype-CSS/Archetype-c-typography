@@ -24,14 +24,14 @@
   //@include font-face();
 
 
-  .h1--structure { font-size: _u-deepGet($typography--structure, h1); }
-  .h2--structure { font-size: _u-deepGet($typography--structure, h2); }
-  .h3--structure { font-size: _u-deepGet($typography--structure, h3); }
-  .h4--structure { font-size: _u-deepGet($typography--structure, h4); }
-  .h5--structure { font-size: _u-deepGet($typography--structure, h5); }
-  .h6--structure { font-size: _u-deepGet($typography--structure, h6); }
-  .lead--structure { font-size: _u-deepGet($typography--structure, lead); }
-  .meta--structure { font-size: _u-deepGet($typography--structure, meta); }
+  .h1--structure { font-size: u-deepGet($typography--structure, h1); }
+  .h2--structure { font-size: u-deepGet($typography--structure, h2); }
+  .h3--structure { font-size: u-deepGet($typography--structure, h3); }
+  .h4--structure { font-size: u-deepGet($typography--structure, h4); }
+  .h5--structure { font-size: u-deepGet($typography--structure, h5); }
+  .h6--structure { font-size: u-deepGet($typography--structure, h6); }
+  .lead--structure { font-size: u-deepGet($typography--structure, lead); }
+  .meta--structure { font-size: u-deepGet($typography--structure, meta); }
 
   /**
    * Headers
@@ -40,48 +40,48 @@
    */
   h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
-    color: _u-deepGet($typography--skin, txtColor, header);
-    font-family: _u-deepGet($typography--skin, font-family, header);
+    color: u-deepGet($typography--skin, txtColor, header);
+    font-family: u-deepGet($typography--skin, font-family, header);
     text-rendering: optimizelegibility;  /* 1 */
   }
 
   h1 {
-    @include adjust-font-size-to(_u-deepGet($typography--structure, fontSize, h1));
-    margin: 0 auto rhythm(1, _u-deepGet($typography--structure, fontSize, h1));
+    @include adjust-font-size-to(u-deepGet($typography--structure, fontSize, h1));
+    margin: 0 auto rhythm(1, u-deepGet($typography--structure, fontSize, h1));
   }
 
   h2 {
-    @include adjust-font-size-to(_u-deepGet($typography--structure, fontSize, h2));
-    margin: 0 auto rhythm(1, _u-deepGet($typography--structure, fontSize, h2));
+    @include adjust-font-size-to(u-deepGet($typography--structure, fontSize, h2));
+    margin: 0 auto rhythm(1, u-deepGet($typography--structure, fontSize, h2));
   }
 
   h3 {
-    @include adjust-font-size-to(_u-deepGet($typography--structure, fontSize, h3));
-    margin: 0 auto rhythm(1, _u-deepGet($typography--structure, fontSize, h3));
+    @include adjust-font-size-to(u-deepGet($typography--structure, fontSize, h3));
+    margin: 0 auto rhythm(1, u-deepGet($typography--structure, fontSize, h3));
   }
 
   h4 {
-    @include adjust-font-size-to(_u-deepGet($typography--structure, fontSize, h4));
-    margin: 0 auto rhythm(1, _u-deepGet($typography--structure, fontSize, h4));
+    @include adjust-font-size-to(u-deepGet($typography--structure, fontSize, h4));
+    margin: 0 auto rhythm(1, u-deepGet($typography--structure, fontSize, h4));
   }
 
   h5 {
-    @include adjust-font-size-to(_u-deepGet($typography--structure, fontSize, h5));
-    margin: 0 auto rhythm(1, _u-deepGet($typography--structure, fontSize, h5));
+    @include adjust-font-size-to(u-deepGet($typography--structure, fontSize, h5));
+    margin: 0 auto rhythm(1, u-deepGet($typography--structure, fontSize, h5));
   }
 
   h6 {
-    @include adjust-font-size-to(_u-deepGet($typography--structure, fontSize, h6));
-    margin: 0 auto rhythm(1, _u-deepGet($typography--structure, fontSize, h6));
+    @include adjust-font-size-to(u-deepGet($typography--structure, fontSize, h6));
+    margin: 0 auto rhythm(1, u-deepGet($typography--structure, fontSize, h6));
   }
 
   .subheader { 
     font-weight: normal; 
-    color: _u-deepGet($typography--skin, txtColor, subheader); 
+    color: u-deepGet($typography--skin, txtColor, subheader); 
   }
 
   p {
-    //margin-bottom: _u-deepGet($typography--structure, lineHeight, base);
+    //margin-bottom: u-deepGet($typography--structure, lineHeight, base);
     //font-family: $body-text;                           ////////does this not inherit from above??
     margin: 0 auto rhythm(1);
   }
@@ -90,32 +90,32 @@
 // p+p { text-indent: 2em; margin-top: -1.5em; }
 
   .lead {  
-    @include adjust-font-size-to(_u-deepGet($typography--structure, fontSize, lead));
-    margin: 0 auto rhythm(1, _u-deepGet($typography--structure, fontSize, lead));
-    color: _u-deepGet($typography--structure, txtColor, lead);
+    @include adjust-font-size-to(u-deepGet($typography--structure, fontSize, lead));
+    margin: 0 auto rhythm(1, u-deepGet($typography--structure, fontSize, lead));
+    color: u-deepGet($typography--structure, txtColor, lead);
   }
 
   .meta {
-    //@include adjust-font-size-to(_u-deepGet($typography--structure, fontSize, meta), _u-deepGet($typography--structure, lineHeight, meta));
+    //@include adjust-font-size-to(u-deepGet($typography--structure, fontSize, meta), u-deepGet($typography--structure, lineHeight, meta));
   }
 
   .footnote {
-    //@include adjust-font-size-to(_u-deepGet($typography--structure, fonSize, footnote), _u-deepGet($typography--structure, lineHeight, footnote));
+    //@include adjust-font-size-to(u-deepGet($typography--structure, fonSize, footnote), u-deepGet($typography--structure, lineHeight, footnote));
   }
 
   .muted {
-    color: _u-deepGet($basePallet, baseColor, muted);
+    color: u-deepGet($basePallet, baseColor, muted);
   }
 
   address {
     display: block;
     // TODO: fix this:
-    margin-bottom: 1em; //_u-deepGet($typography--structure, lineHeight, base); 
-    line-height: _u-deepGet($typography--structure, lineHeight, base);
+    margin-bottom: 1em; //u-deepGet($typography--structure, lineHeight, base); 
+    line-height: u-deepGet($typography--structure, lineHeight, base);
     font-style: normal;
   }
   del {
-    color: _u-deepGet($basePallet, baseColor, subtle);
+    color: u-deepGet($basePallet, baseColor, subtle);
     text-decoration: line-through;
   }
  
@@ -133,8 +133,8 @@
   }
 
   ins { 
-    background-color: _u-deepGet($basePallet, baseColor, subtle); 
-    color: _u-deepGet($basePallet, baseColor, subtle); 
+    background-color: u-deepGet($basePallet, baseColor, subtle); 
+    color: u-deepGet($basePallet, baseColor, subtle); 
     text-decoration: none; 
   }
 

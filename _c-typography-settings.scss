@@ -116,21 +116,21 @@ $typography--skin: (
     //accent:
     //subtle:
     //strong:
-    lead:                _u-deepGet($colorPallet, baseColor, subtle),
-    hero:                _u-deepGet($colorPallet, baseColor, subtle),
-    subheader:           _u-deepGet($colorPallet, baseColor, subtle),
-    accent:              _u-deepGet($colorPallet, baseColor, subtle),
+    lead:                u-deepGet($colorPallet, baseColor, subtle),
+    hero:                u-deepGet($colorPallet, baseColor, subtle),
+    subheader:           u-deepGet($colorPallet, baseColor, subtle),
+    accent:              u-deepGet($colorPallet, baseColor, subtle),
     body:                black(30),
-    mark:                _u-deepGet($colorPallet, baseColor, white),
-    deleted:             _u-deepGet($colorPallet, baseColor, subtle),
-    ins:                 _u-deepGet($colorPallet, baseColor, subtle),
-    selection:           _u-deepGet($colorPallet, baseColor, white),
-    header:              black(40)
+    mark:                u-deepGet($colorPallet, baseColor, white),
+    deleted:             u-deepGet($colorPallet, baseColor, subtle),
+    ins:                 u-deepGet($colorPallet, baseColor, subtle),
+    selection:           u-deepGet($colorPallet, baseColor, white),
+    header:              red //black(40)
   ),
   bgColor: (
     ins:                  #ff9,
     mark:                 yellow,
-    body:                 _u-deepGet($colorPallet, baseColor, white),
+    body:                 u-deepGet($colorPallet, baseColor, white),
     selection:            #fe57a1,   /* 1 */
     tap:                  black(75)
   )
