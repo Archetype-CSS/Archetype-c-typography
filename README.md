@@ -1,4 +1,4 @@
-# c-typography[![Build Status](https://secure.travis-ci.org/Archetype-CSS/Archetype-c-typography.png?branch=master)](http://travis-ci.org/Archetype-CSS/Archetype-c-typography) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+# Archetype-c-typography[![Build Status](https://secure.travis-ci.org/Archetype-CSS/Archetype-c-typography.png?branch=master)](http://travis-ci.org/Archetype-CSS/Archetype-c-typography) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 Archetype typography component
 
