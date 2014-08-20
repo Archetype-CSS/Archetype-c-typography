@@ -7,9 +7,9 @@
  * this is done to avoid repeatitive overrides
  * see: http://css-tricks.com/opt-in-typography/  
  */
-@import 'compass';
+
+// import your own settings map here, or use the default
 @import '_c-typography-settings.scss';
-//@import 'bower_components/c-spacers/_c-spacers';
 
 //TODO: add conditional and set variables so each sedtion is opt IN
 //      also create secondary and teteriary name space blocks warped in conditional
